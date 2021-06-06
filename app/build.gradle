@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -70,5 +71,9 @@ dependencies {
 
     implementation 'com.amplifyframework:aws-api:1.17.4'
     implementation 'com.amplifyframework:aws-datastore:1.17.4'
+
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
 
 }
