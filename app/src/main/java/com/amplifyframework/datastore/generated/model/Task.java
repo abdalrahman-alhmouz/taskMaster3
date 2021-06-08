@@ -26,7 +26,7 @@ public final class Task implements Model {
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String", isRequired = true) String title;
   private final @ModelField(targetType="String") String description;
-  private final @ModelField(targetType="String") String status;
+    private final @ModelField(targetType="String") String status;
   public String getId() {
       return id;
   }
@@ -142,8 +142,18 @@ public final class Task implements Model {
     private String id;
     private String title;
     private String description;
-    private String status;
-    @Override
+      private String status;
+      private String location;
+
+      public String getLocation() {
+          return location;
+      }
+
+      public void setLocation(String location) {
+          this.location = location;
+      }
+
+      @Override
      public Task build() {
         String id = this.id != null ? this.id : UUID.randomUUID().toString();
         
@@ -218,5 +228,5 @@ public final class Task implements Model {
       return (CopyOfBuilder) super.status(status);
     }
   }
-  
+
 }
